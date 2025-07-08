@@ -1,0 +1,17 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import NavItems from './NavItems'
+
+const Navbar = () => {
+  return (
+    <nav className="navbar">
+      <Link href="/">
+        <div className="flex items-center gap-2.5 cursor-pointer">
+          <Image alt="logo" src="/images/logo.png" width={46} height={46} />
+        </div>
+      </Link>
+      <NavItems />
+    </nav>
+  )
+}
+export default Navbar
