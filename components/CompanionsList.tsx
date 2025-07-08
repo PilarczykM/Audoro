@@ -55,6 +55,7 @@ const CompanionsList = ({
                         width={32}
                         height={32}
                         alt="Icon"
+                        className="w-auto"
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -77,6 +78,7 @@ const CompanionsList = ({
                     width={18}
                     height={18}
                     alt="subject-icon"
+                    className="w-auto"
                   />
                 </div>
               </TableCell>
