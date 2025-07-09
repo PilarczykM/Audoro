@@ -121,11 +121,15 @@ audoro/
 
 1. **Install dependencies:**
    ```bash
+   npm install
+   or
    pnpm install
    ```
 
 2. **Run the development server:**
    ```bash
+   npm dev
+   or
    pnpm dev
    ```
 
