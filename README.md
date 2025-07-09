@@ -5,17 +5,13 @@ Audoro is a web application designed to help users manage and interact with digi
 ## Features
 
 - **Companion Management**:  
-  Create, view, and customize digital companions. Each companion can have unique attributes and can be managed through a dedicated interface.
-
+  Create, view, and customize digital companions. Each companion can have unique attributes and can be managed through a dedicated interface (list, detail, and creation pages).
 - **My Journey**:  
   Track your learning or progress journey with a dedicated section to visualize and manage your achievements.
-
 - **Subscription Management**:  
   Manage your subscription status and access premium features.
-
 - **Authentication**:  
-  Secure sign-in functionality to protect user data and personalize the experience.
-
+  Secure sign-in functionality with [Clerk](https://clerk.com/) to protect user data and personalize the experience.
 - **Responsive UI**:  
   Modern, responsive design using reusable React components and utility-first CSS.
 
@@ -23,55 +19,117 @@ Audoro is a web application designed to help users manage and interact with digi
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
 - **Language**: TypeScript
+- **Authentication**: [Clerk](https://clerk.com/)
 - **UI Components**: Custom React components and [shadcn/ui](https://ui.shadcn.com/) primitives
-- **Styling**: CSS (with global styles and component-level styles)
-- **Package Management**: npm / pnpm
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Forms**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/guide/packages/lucide-react)
+- **Animations**: [Lottie React](https://github.com/gamote/lottie-react)
+- **Package Management**: pnpm
 - **Linting**: ESLint
 - **Other Tools**:  
   - PostCSS for CSS processing  
   - Custom utility functions  
-  - SVG and PNG assets for icons and images
+  - [Supabase](https://supabase.com/) integration  
+  - [Vapi](https://vapi.ai/) SDK integration
 
 ## Project Structure
 
 ```
 audoro/
   app/                # Next.js app directory (routing, pages)
-    companions/       # Companion-related pages (list, detail, new)
+    companions/       # Companion-related pages
+      [id]/           # Detail/edit page for a companion
+        page.tsx
+      new/            # New companion creation page
+        page.tsx
+      page.tsx        # Companions list page
     my-journey/       # User journey tracking
+      page.tsx
     sign-in/          # Authentication
+      [[...sign-in]]/ # Sign-in page (Clerk)
+        page.tsx
     subscription/     # Subscription management
+      page.tsx
     layout.tsx        # App layout
     globals.css       # Global styles
+    page.tsx          # Home page
   components/         # Reusable React components
+    CompanionCard.tsx
+    CompanionsList.tsx
+    CompanionForm.tsx
+    CompanionComponent.tsx
+    Navbar.tsx
+    NavItems.tsx
+    CTA.tsx
+    SearchInput.tsx
+    SubjectFilter.tsx
     ui/               # UI primitives (shadcn/ui)
+      button.tsx
+      form.tsx
+      input.tsx
+      label.tsx
+      select.tsx
+      table.tsx
+      textarea.tsx
   constants/          # Static data and configuration
-  lib/                # Utility functions
+    index.ts
+    soundwaves.json
+  lib/                # Utility functions and integrations
+    actions/
+      companion.action.ts
+    utils.ts
+    supabase.ts
+    vapi.sdk.ts
   public/             # Static assets (icons, images)
   types/              # TypeScript type definitions
+    index.d.ts
+    vapi.d.ts
 ```
 
 ## Components
 
 - **Custom Components (`components/`)**  
-  Application-specific React components developed for Audoro, implementing the app’s main features and logic (e.g., `CompanionCard`, `CompanionsList`, `Navbar`).
+  - `CompanionCard`  
+  - `CompanionsList`  
+  - `CompanionForm`  
+  - `CompanionComponent`  
+  - `Navbar`  
+  - `NavItems`  
+  - `CTA`  
+  - `SearchInput`  
+  - `SubjectFilter`
 
 - **UI Primitives (`components/ui/`)**  
-  Foundational UI components sourced from [shadcn/ui](https://ui.shadcn.com/), used as building blocks for the interface (e.g., `button`, `form`, `input`, `label`, `select`, `table`, `textarea`).
+  - `button`  
+  - `form`  
+  - `input`  
+  - `label`  
+  - `select`  
+  - `table`  
+  - `textarea`
+
+## Utilities & Actions
+
+- **Utility Functions (`lib/utils.ts`)**: General-purpose helpers used throughout the app.
+- **Companion Actions (`lib/actions/companion.action.ts`)**: Logic for managing companion data.
+- **Integrations**:  
+  - `lib/supabase.ts`: Supabase client setup.  
+  - `lib/vapi.sdk.ts`: Vapi SDK integration.
 
 ## Getting Started
 
 1. **Install dependencies:**
    ```bash
    npm install
-   # or
+   or
    pnpm install
    ```
 
 2. **Run the development server:**
    ```bash
-   npm run dev
-   # or
+   npm dev
+   or
    pnpm dev
    ```
 
@@ -79,8 +137,7 @@ audoro/
 
 ## Scripts
 
-- `dev` – Start the development server
+- `dev` – Start the development server with Turbopack
 - `build` – Build the application for production
 - `start` – Start the production server
 - `lint` – Run ESLint
-
