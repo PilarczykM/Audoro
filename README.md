@@ -11,7 +11,7 @@ Audoro is a web application designed to help users manage and interact with digi
 - **Subscription Management**:  
   Manage your subscription status and access premium features.
 - **Authentication**:  
-  Secure sign-in functionality to protect user data and personalize the experience.
+  Secure sign-in functionality with [Clerk](https://clerk.com/) to protect user data and personalize the experience.
 - **Responsive UI**:  
   Modern, responsive design using reusable React components and utility-first CSS.
 
@@ -19,16 +19,19 @@ Audoro is a web application designed to help users manage and interact with digi
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
 - **Language**: TypeScript
+- **Authentication**: [Clerk](https://clerk.com/)
 - **UI Components**: Custom React components and [shadcn/ui](https://ui.shadcn.com/) primitives
-- **Styling**: CSS (with global styles and component-level styles)
-- **Package Management**: npm / pnpm
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Forms**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/guide/packages/lucide-react)
+- **Animations**: [Lottie React](https://github.com/gamote/lottie-react)
+- **Package Management**: pnpm
 - **Linting**: ESLint
 - **Other Tools**:  
   - PostCSS for CSS processing  
   - Custom utility functions  
-  - Supabase integration  
-  - Vapi SDK integration  
-  - SVG and PNG assets for icons and images
+  - [Supabase](https://supabase.com/) integration  
+  - [Vapi](https://vapi.ai/) SDK integration
 
 ## Project Structure
 
@@ -44,7 +47,7 @@ audoro/
     my-journey/       # User journey tracking
       page.tsx
     sign-in/          # Authentication
-      [[...sign-in]]/ # Sign-in page
+      [[...sign-in]]/ # Sign-in page (Clerk)
         page.tsx
     subscription/     # Subscription management
       page.tsx
@@ -130,8 +133,7 @@ audoro/
 
 ## Scripts
 
-- `dev` – Start the development server
+- `dev` – Start the development server with Turbopack
 - `build` – Build the application for production
 - `start` – Start the production server
 - `lint` – Run ESLint
-
