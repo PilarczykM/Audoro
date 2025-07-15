@@ -2,9 +2,9 @@ import { PricingTable } from '@clerk/nextjs'
 
 function Subscription() {
   return (
-    <div>
+    <main>
       <PricingTable />
-    </div>
+    </main>
   )
 }
 export default Subscription
