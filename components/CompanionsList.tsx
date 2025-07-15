@@ -59,7 +59,7 @@ const CompanionsList = ({
                     </div>
                     <div className="flex flex-col gap-2">
                       <p className="font-bold text-2xl">{name}</p>
-                      <p>{topic}</p>
+                      <p className="md:truncate lg:w-96">{topic}</p>
                     </div>
                   </div>
                 </Link>
