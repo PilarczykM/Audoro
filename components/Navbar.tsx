@@ -9,6 +9,9 @@ const Navbar = () => {
       <Link href="/">
         <div className="flex items-center gap-2.5 cursor-pointer">
           <Image alt="logo" src="/images/logo.png" width={46} height={46} />
+          <p className="text-xl font-serif font-semibold tracking-wide text-gray-900">
+            Audoro
+          </p>
         </div>
       </Link>
       <div className="flex items-center gap-8">
