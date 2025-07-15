@@ -105,7 +105,7 @@ const CompanionComponent = ({
       vapi.off('speech-start', onSpeechStart)
       vapi.off('speech-end', onSpeechEnd)
     }
-  }, [])
+  }, [companionId])
 
   return (
     <section className="flex flex-col h-[70vh]">
